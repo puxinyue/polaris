@@ -34,6 +34,11 @@ export const demoGenerate = inngest.createFunction(
         const response = await generateText({
             model: anthropic('MiniMax-M2.1'),
             prompt: fianlPrompt,
+            experimental_telemetry: { // 添加experimental_telemetry可以计算token用了多少
+              isEnabled: true,
+              recordInputs: true,
+              recordOutputs: true,
+            }
         });
         return response;
      });
