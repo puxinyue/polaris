@@ -21,7 +21,7 @@ const font = Poppins({
 
 const Navbar = ({projectId}:{projectId:Id<'projects'>}) => {
     const project = useGetProjectById(projectId)
-    const renameProject = useRenameProject(projectId)
+    const renameProject = useRenameProject()
     const [isRenaming,setRenaming] = useState(false)
     const [newName,setNewName] = useState(project?.name??'')
 
